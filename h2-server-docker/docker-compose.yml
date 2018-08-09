@@ -1,0 +1,13 @@
+version: '2.1'
+services:
+    h2_server:
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+        image: playingjoker/h2_server:latest
+        volumes:
+            - "${HOME}/.h2_data:/h2"
+        ports:
+            - "8082:8082"
+            - "9092:9092"
+        restart: always

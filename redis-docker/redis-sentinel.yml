@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+    redis-sentinel1:
+        image: redis
+        restart: always
+        container_name: redis-sentinel1
+        ports:
+            - "26380:26380"
+        volumes:
+            - "./conf/sentinel26380.conf:/usr/local/etc/redis/redis.conf"
+            - "${HOME}/.redis/26380:/data"
+        command: redis-sentinel /usr/local/etc/redis/redis.conf
+
+    redis-sentinel2:
+        image: redis
+        restart: always
+        container_name: redis-sentinel2
+        ports:
+            - "26381:26380"
+        volumes:
+            - "./conf/sentinel26381.conf:/usr/local/etc/redis/redis.conf"
+            - "${HOME}/.redis/26381:/data"
+        command: redis-sentinel /usr/local/etc/redis/redis.conf
+
+    redis-sentinel3:
+        image: redis
+        restart: always
+        container_name: redis-sentinel3
+        ports:
+            - "26382:26380"
+        volumes:
+            - "./conf/sentinel26382.conf:/usr/local/etc/redis/redis.conf"
+            - "${HOME}/.redis/26382:/data"
+        command: redis-sentinel /usr/local/etc/redis/redis.conf
+

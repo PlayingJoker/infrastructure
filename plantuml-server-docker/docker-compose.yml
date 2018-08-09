@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+    plantuml-server:
+        image: plantuml/plantuml-server:jetty
+        restart: always
+        container_name: plantuml-server
+        ports:
+            - "28080:8080"
+        #volumes:
+        #    - "./conf/node6380.conf:/usr/local/etc/redis/redis.conf"
+        #    - "${HOME}/.redis/6380:/data"
+        #command: redis-server /usr/local/etc/redis/redis.conf
+

@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+    idea-license:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: playingjoker/idea-license:latest
+        ports:
+            - "9996:9996"
+        restart: always

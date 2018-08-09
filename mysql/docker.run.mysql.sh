@@ -1,0 +1,1 @@
+docker run --name=mysql1 -p 3306:3306 -e MYSQL_RANDOM_ROOT_PASSWORD=true -v /Users/joker/workspace/docker/mysql/my.cnf:/etc/my.cnf -v /Users/joker/workspace/docker/mysql/datadir:/var/lib/mysql -d store/oracle/mysql-enterprise-server:5.7

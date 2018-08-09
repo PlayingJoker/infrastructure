@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+    redis-master:
+        image: redis
+        restart: always
+        container_name: redis-server1
+        ports:
+            - "6380:6380"
+        volumes:
+            - "./conf/node6380.conf:/usr/local/etc/redis/redis.conf"
+            - "${HOME}/.redis/6380:/data"
+        command: redis-server /usr/local/etc/redis/redis.conf
+
+    redis-slave1:
+        image: redis
+        restart: always
+        container_name: redis-server2
+        ports:
+            - "6381:6380"
+        volumes:
+            - "./conf/node6381.conf:/usr/local/etc/redis/redis.conf"
+            - "${HOME}/.redis/6381:/data"
+        command: redis-server /usr/local/etc/redis/redis.conf
+
+    redis-slave2:
+        image: redis
+        restart: always
+        container_name: redis-server3
+        ports:
+            - "6382:6380"
+        volumes:
+            - "./conf/node6382.conf:/usr/local/etc/redis/redis.conf"
+            - "${HOME}/.redis/6382:/data"
+        command: redis-server /usr/local/etc/redis/redis.conf
+
