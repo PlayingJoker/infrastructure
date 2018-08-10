@@ -2,7 +2,7 @@ FROM centos
 
 RUN mkdir -p /webapp
 
-ADD IntelliJ.tar.gz /webapp
+ADD intellij.tar /webapp
 
 ADD entrypoint.sh /
 
