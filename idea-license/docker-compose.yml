@@ -1,10 +1,14 @@
 version: '2.1'
 services:
-    idea-license:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        image: playingjoker/idea-license:latest
-        ports:
-            - "9996:9996"
-        restart: always
+  idea-license:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: playingjoker/idea-license:1.0.1
+    container_name: idea-license
+    environment:
+      - SERVER_PORT=9996
+      - IDEA_USERNAME=playingjoker
+    ports:
+      - "9996:9996"
+    restart: always
